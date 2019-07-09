@@ -88,3 +88,15 @@ create table payment(
     CONSTRAINT fk_booking FOREIGN KEY(booking_id) REFERENCES booking(booking_id)
 
 )Engine=InnoDB;
+
+-- create tabe for administrator
+create table users(
+    username varchar(50) primary key,
+    password varchar(50) not null,
+    full_name varchar(100),
+    email varchar(50),
+    phone varchar(20),
+    position varchar(100) not null,
+    block enum('Y','N') default('N') not null,
+    id_session varchar(100)
+)Engine=InnoDB;

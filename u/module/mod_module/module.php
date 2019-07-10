@@ -9,12 +9,12 @@ switch ($act) {
         echo "
         <div class='ui stackable grid container'>
             <div class='eight wide column'>
-                <h2 class=''>Tampil Modul</h2>
+                <h2 class=''>Tampil Module</h2>
             </div>  
             <div class='four wide column'>
                 <a onclick=window.location.href='?m=$m&act=tambah' class='ui basic button right floated'>
                 <i class='icon plus'></i>
-                    Tambah Modul
+                    Tambah Module
                 </a>
             </div>
             <div class='twelve wide column'>
@@ -65,7 +65,7 @@ switch ($act) {
                 </a>
             </div>
             <div class="eight wide column">
-                <h2>Tambah Modul</h2>
+                <h2>Tambah Module</h2>
             </div>
         </div>
         <div class="ui stackable grid container">
@@ -112,7 +112,7 @@ switch ($act) {
             </a>
         </div>
         <div class='eight wide column'>
-            <h2>Edit Modul</h2>
+            <h2>Edit Module</h2>
         </div>
         <div class='eight wide column'>
             <h2 class='ui header'></h2>

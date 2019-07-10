@@ -2,23 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da4d1499-d967-4cf5-9470-bcfa5ed908be" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminweb/cek_login.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminweb/content.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminweb/header.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminweb/index-signup.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminweb/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminweb/logout.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminweb/media.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminweb/menu.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminweb/module/mod_modul/aksi_modul.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminweb/module/mod_modul/modul.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminweb/module/mod_pegawai/aksi_pegawai.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/adminweb/module/mod_pegawai/pegawai.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/connect.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/atol_flight_booking" beforeDir="false" afterPath="$PROJECT_DIR$/database/atol_flight_booking" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/u/module/mod_module/module.php" beforeDir="false" afterPath="$PROJECT_DIR$/u/module/mod_module/module.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,8 +29,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/functions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="21" column="44" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
+            <state relative-caret-position="122">
+              <caret line="42" column="6" selection-start-line="42" selection-start-column="6" selection-end-line="42" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -63,8 +47,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/u/module/mod_module/module.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="42" column="39" selection-start-line="42" selection-start-column="39" selection-end-line="42" selection-end-column="39" />
+            <state relative-caret-position="306">
+              <caret line="115" column="14" lean-forward="true" selection-start-line="115" selection-start-column="14" selection-end-line="115" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -182,18 +166,18 @@
       <updated>1562672506126</updated>
       <workItem from="1562672511813" duration="6804000" />
       <workItem from="1562682777428" duration="22083000" />
-      <workItem from="1562719657991" duration="6943000" />
+      <workItem from="1562719657991" duration="7295000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35830000" />
+    <option name="totallyTimeSpent" value="36182000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-2" y="17" width="1370" height="753" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2526475" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2526475" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -206,7 +190,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32961783" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32961783" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -314,15 +298,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/functions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="44" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
+        <state relative-caret-position="122">
+          <caret line="42" column="6" selection-start-line="42" selection-start-column="6" selection-end-line="42" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/u/module/mod_module/module.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="42" column="39" selection-start-line="42" selection-start-column="39" selection-end-line="42" selection-end-column="39" />
+        <state relative-caret-position="306">
+          <caret line="115" column="14" lean-forward="true" selection-start-line="115" selection-start-column="14" selection-end-line="115" selection-end-column="14" />
         </state>
       </provider>
     </entry>

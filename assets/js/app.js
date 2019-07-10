@@ -99,8 +99,8 @@ $('#form-login')
                 identifier: 'password',
                 rules: [
                     {
-                        type: 'minLength[7]',
-                        prompt: 'Password minimal 7 karakter'
+                        type: 'minLength[4]',
+                        prompt: 'Password minimal 4 karakter'
                     }
                 ]
             },

@@ -89,7 +89,7 @@ create table payment(
 
 )Engine=InnoDB;
 
--- create tabe for administrator
+-- create table for administrator
 create table users(
     username varchar(50) primary key,
     password varchar(50) not null,
@@ -100,3 +100,17 @@ create table users(
     block enum('Y','N') default('N') not null,
     id_session varchar(100)
 )Engine=InnoDB;
+
+-- untuk mengelola modul/data menu pada halaman administrator
+create table module(
+    module_id int primary key auto_increment,
+    module_name varchar(50) not null,
+    link varchar(50),
+    icon varchar(50),
+    active enum('Y','N') not null default 'Y'
+)Engine=InnoDB;
+
+-- ### INSERT DATA
+insert into module values
+(null, "Beranda","?m=beranda","home","Y"),
+(null, "Modul","?m=modul","person","Y");

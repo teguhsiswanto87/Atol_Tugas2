@@ -112,5 +112,13 @@ create table module(
 
 -- ### INSERT DATA
 insert into module values
-(null, "Beranda","?m=beranda","home","Y"),
-(null, "Modul","?m=modul","person","Y");
+(null, "beranda","?m=beranda","home","Y"),
+(null, "module","?m=module","clone","Y"),
+(null, "pesawat","?m=pesawat","plane","Y"),
+(null, "penerbangan","?m=penerbangan","calendar","Y"),
+(null, "penerbangan kelas","?m=star","star","Y"),
+(null, "booking status","?m=bookingstatus","bookmark","Y"),
+(null, "booking","?m=booking","ticket alternate","Y"),
+(null, "penumpang","?m=penumpang","users","Y"),
+(null, "pembayaran","?m=pembayaran","dollar sign","Y"),
+(null, "pengguna","?m=pengguna","user circle","Y");

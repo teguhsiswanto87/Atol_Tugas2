@@ -88,7 +88,6 @@ function usersValidation() {
     }
 }
 
-document.getElementById("password").classList.add("error");
 
 //password & repeat password validation
 function checkPass() {

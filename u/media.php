@@ -13,7 +13,7 @@ if (empty($_SESSION['username']) && empty($_SESSION['password'])) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Dashboard</title>
-        <link rel="shortcut icon" href="https://ec.europa.eu/europeaid/sites/devco/files/apo_color.jpg"
+        <link rel="shortcut icon" href="https://img.icons8.com/cotton/2x/paper-plane--v2.png"
               type="image/x-icon">
         <!-- Semantic CDN -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css">

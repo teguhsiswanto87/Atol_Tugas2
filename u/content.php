@@ -44,6 +44,10 @@ if (empty($_SESSION['username']) && empty($_SESSION['password'])) {
         if ($_SESSION['position'] == 'admin') {
             include "module/mod_module/module.php";
         }
+    } elseif ($_GET['m'] == 'pengguna') {
+        if ($_SESSION['position'] == 'admin') {
+            include "module/mod_pengguna/pengguna.php";
+        }
     } else {
         echo "Modul <b>$_GET[m]</b> sedang dibuat";
     }

@@ -71,14 +71,14 @@ switch ($act) {
         <div class="ui stackable grid container">
             <div class="eight wide column">
                 <h2 class="ui header"></h2>
-                <form class="ui form" method="POST" id="form-modul"
+                <form class="ui form" method="POST" name="formModule" onsubmit="return moduleValidation()"
                       action=<?php echo "$aksi?m=$m&act=tambah" ?>>
                     <div class="field">
                         <label>Nama Modul</label>
                         <input type="text" name="module_name" placeholder="Nama Modul">
                     </div>
                     <div class="field">
-                        <label>Link</label>
+                        <label>Link (contoh =>  ?m=namamodule)</label>
                         <input type="text" name="link" placeholder="Link">
                     </div>
                     <div class="field">

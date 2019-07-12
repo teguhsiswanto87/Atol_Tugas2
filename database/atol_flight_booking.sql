@@ -93,7 +93,7 @@ create table payment(
 create table users(
     username varchar(50) primary key,
     password varchar(50) not null,
-    full_name varchar(100),
+    full_name varchar(50) not null,
     email varchar(50),
     phone varchar(20),
     position varchar(100) not null,

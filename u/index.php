@@ -12,6 +12,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script type="text/javascript"
             src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.js"></script>
+    <!--additional-->
     <link rel="stylesheet" href="../assets/app.css">
 
 <body>
@@ -25,21 +26,24 @@
         </p>
         <img src="https://img.icons8.com/cotton/2x/paper-plane--v2.png"
              alt="ini adalah gambar laptop" srcset="" class="ui centered image"
-             style="margin-top: 3rem ;">
+             style="margin-top: 2rem ;">
     </div>
 
     <div class="six wide column">
         <div class="ui grid card-2">
             <div class="sixteen wide column">
-<!--                <h2 class="ui header"></h2>-->
-                <form class="ui form" method="POST" action="login_check.php">
+                <!--                <h2 class="ui header"></h2>-->
+                <form class="ui form" method="POST" action="login_check.php" name="formLogin"
+                      onsubmit="return loginAuth()">
                     <div class="field">
                         <label>Username*</label>
-                        <input type="text" name="username" placeholder="Username" autofocus>
+                        <input type="text" name="username" placeholder="Username" maxlength="50" minlength="4" autofocus
+                        >
                     </div>
                     <div class="field">
                         <label>Password</label>
-                        <input type="password" name="password" placeholder="password">
+                        <input type="password" name="password" placeholder="Password" maxlength="50" minlength="4"
+                        >
                     </div>
                     <div class="field">
 
@@ -51,7 +55,8 @@
                         ?>
 
                     </div>
-                    <button class="ui fluid primary button" type="submit">Log In</button>
+                    <button class="ui fluid primary button" name="btnLogin" type="submit">Log In</button>
+                    <!-- Sign Up di Invisible dulu -->
                     <p style="margin-bottom: 1rem !important; display: none;">
                         Don't have an account,<br>
                         <a href="index-signup.php">SignUp</a>

@@ -18,7 +18,7 @@ if (!ctype_alnum($injeksi_username) OR !ctype_alnum($injeksi_password)) {
     $user_data = $res->fetch_assoc();
     $row_cnt = $res->num_rows;
 
-    // Apabila username dan password ditemukan (benar)
+    // Apabila username dan password ditemukan (benar) & hanya satu
     if ($row_cnt == 1) {
         session_start();
 
@@ -38,9 +38,10 @@ if (!ctype_alnum($injeksi_username) OR !ctype_alnum($injeksi_password)) {
         //langsung direct ke modul
         header("location:media.php?m=module");
     } else {
-        echo "<link href=\"css/style_login.css\" rel=\"stylesheet\" type=\"text/css\" />";
-        echo "<div id=\"login\"><h1 class=\"fail\">Login Gagal! Username & Password salah.</h1>";
-        echo "<p class=\"fail\"><a href=\"index.php\">Ulangi Lagi</a></p></div>";
+        header("location: index.php?error=1");
+//        echo "<link href=\"css/style_login.css\" rel=\"stylesheet\" type=\"text/css\" />";
+//        echo "<div id=\"login\"><h1 class=\"fail\">Login Gagal! Username & Password salah.</h1>";
+//        echo "<p class=\"fail\"><a href=\"index.php\">Ulangi Lagi</a></p></div>";
     }
 }
 ?>

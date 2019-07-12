@@ -18,7 +18,7 @@ if (empty($_SESSION['username']) && empty($_SESSION['password'])) { } else {
         </div>
     </div>
     <!-- logout modal -->
-    <script type="text/javascript" src="../assets/js/app.js"></script>
+    <script type="text/javascript" src="../assets/app.js"></script>
 
     <div class="ui basic modal">
         <div class="ui icon header">

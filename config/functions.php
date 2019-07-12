@@ -15,8 +15,9 @@ function anti_injection($data)
 
 // my Input Format(0) ==> 0 whitespace collapse/nospace & lowercase
 // my Input Format(1) ==> 1 whitespace collapse & lowercase
-function my_inputformat($str,$space){
-    if ($space==1)
+function my_inputformat($str, $space)
+{
+    if ($space == 1)
         return strtolower(trim(preg_replace("/\s+/", " ", $str)));
     else
         return strtolower(trim(preg_replace("/\s+/", "", $str)));
@@ -42,91 +43,11 @@ function getListModule()
 
 class Module
 {
-    private $module_id = 0;
-    private $module_name = "";
-    private $link = "";
-    private $icon = "";
-    private $active = "";
-
-    /**
-     * @return int
-     */
-    public function getModuleId()
-    {
-        return $this->module_id;
-    }
-
-    /**
-     * @param int $module_id
-     */
-    public function setModuleId($module_id)
-    {
-        $this->module_id = $module_id;
-    }
-
-    /**
-     * @return string
-     */
-    public function getModuleName()
-    {
-        return $this->module_name;
-    }
-
-    /**
-     * @param string $module_name
-     */
-    public function setModuleName($module_name)
-    {
-        $this->module_name = $module_name;
-    }
-
-    /**
-     * @return string
-     */
-    public function getLink()
-    {
-        return $this->link;
-    }
-
-    /**
-     * @param string $link
-     */
-    public function setLink($link)
-    {
-        $this->link = $link;
-    }
-
-    /**
-     * @return string
-     */
-    public function getIcon()
-    {
-        return $this->icon;
-    }
-
-    /**
-     * @param string $icon
-     */
-    public function setIcon($icon)
-    {
-        $this->icon = $icon;
-    }
-
-    /**
-     * @return string
-     */
-    public function getActive()
-    {
-        return $this->active;
-    }
-
-    /**
-     * @param string $active
-     */
-    public function setActive($active)
-    {
-        $this->active = $active;
-    }
+//    private $module_id = 0;
+//    private $module_name = "";
+//    private $link = "";
+//    private $icon = "";
+//    private $active = "";
 
     // get data from Module
     function getListModule()
@@ -147,6 +68,7 @@ class Module
         }
     }
 
+    // get 1 data to put in edit form
     function getItemModule($module_id)
     {
         $conn = dbConnect();
@@ -165,7 +87,7 @@ class Module
         }
     }
 
-    // masukkan data modul
+    // masukkan data module
     function insertModule($module_name, $link, $icon, $active)
     {
         $conn = dbConnect();
@@ -177,6 +99,7 @@ class Module
 
     }
 
+    // update data module
     function updateModule($module_id, $module_name, $link, $icon, $active)
     {
         $conn = dbConnect();
@@ -191,15 +114,41 @@ class Module
         }
     }
 
-    function deleteModule($module_id){
+    //delete 1 data module
+    function deleteModule($module_id)
+    {
         $conn = dbConnect();
         if ($conn->connect_errno == 0) {
             $sql = "DELETE FROM module WHERE module_id='$module_id'";
             $res = $conn->query($sql);
             if ($res) return true; else return false;
-        }else{
+        } else {
             return false;
         }
     }
 
+}
+
+
+class LoginCheck
+{
+    function showError($message)
+    {
+        echo "<div class='ui tiny orange message' style='margin: 2rem 0.2rem;'>$message</div>";
+    }
+
+    function checkLogin($par)
+    {
+        if (isset($_GET[$par])) {
+            $error = $_GET[$par];
+            switch ($error) {
+                default :$this->showError("Unknown Error");break;
+                case 1 :$this->showError("Username dan password tidak sesuai");break;
+                case 2 :$this->showError("Error database. Silahkan hubungi administrator");break;
+                case 3 :$this->showError("Koneksi ke Database gagal. Autentikasi gagal");break;
+                case 4 :$this->showError("Anda tidak boleh mengakses halaman sebelumnya karena belum login.
+                        Silahkan login terlebih dahulu");break;
+            }
+        }
+    }
 }

@@ -13,30 +13,31 @@ if (empty($_SESSION['username']) && empty($_SESSION['password'])) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Dashboard</title>
-        <link rel="shortcut icon" href="https://ec.europa.eu/europeaid/sites/devco/files/apo_color.jpg" type="image/x-icon">
+        <link rel="shortcut icon" href="https://ec.europa.eu/europeaid/sites/devco/files/apo_color.jpg"
+              type="image/x-icon">
         <!-- Semantic CDN -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css">
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.js"></script>
+        <script type="text/javascript"
+                src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.js"></script>
 
     <body>
-
-        <div class="ui grid">
-            <!-- side bar -->
-            <div class="three wide column">
-                <div class=" ui secondary vertical pointing menu" style="width: 100%;">
-                    <?php include "menu.php"; ?>
-                </div>
-            </div>
-            <!-- content -->
-            <div class="thirteen wide column" style="width: 100%;">
-                <?php include "header.php"; ?>
-                <?php include "content.php"; ?>
+    <div class="ui grid">
+        <!-- side bar -->
+        <div class="three wide column">
+            <div class=" ui secondary vertical pointing menu" style="width: 100%;">
+                <?php include "menu.php"; ?>
             </div>
         </div>
+        <!-- content -->
+        <div class="thirteen wide column" style="width: 100%;">
+            <?php include "header.php"; ?>
+            <?php include "content.php"; ?>
+        </div>
+    </div>
     </body>
     <!-- javascript addition -->
-    <script type="text/javascript" src="../assets/js/app.js"></script>
+    <script type="text/javascript" src="../assets/app.js"></script>
     <!-- <script type="text/javascript" src="../assets/js/validation.js"></script> -->
 
     </html>

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.js"></script>
-    <link rel="stylesheet" href="../assets/css/app.css">
+    <link rel="stylesheet" href="../assets/app.css">
 
 <body>
     <h1 class="ui header center aligned">Apo Shop Sign Up Form</h1>
@@ -85,7 +85,7 @@
     </div>
 </body>
 <!-- javascript addition -->
-<script type="text/javascript" src="../assets/js/app.js"></script>
+<script type="text/javascript" src="../assets/app.js"></script>
 <!-- <script type="text/javascript" src="../assets/js/validation.js"></script> -->
 
 </html>

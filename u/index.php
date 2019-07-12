@@ -7,50 +7,64 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>TukuTiket Login Administrator</title>
     <!-- Semantic CDN -->
+    <link rel="shortcut icon" href="https://img.icons8.com/cotton/2x/paper-plane--v2.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.js"></script>
-    <link rel="stylesheet" href="../assets/css/app.css">
+    <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.js"></script>
+    <link rel="stylesheet" href="../assets/app.css">
 
 <body>
-    <h1 class="ui header center aligned">TukuTiket Login Administrator</h1>
-    <div class="ui grid container">
-        <div class="ten wide column">
-            <h2 class="ui header center aligned">Manage Ticket Flight</h2>
-            <p>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                Aenean commodo ligula eget Lorem ipsum dolor sit amet,
-                consectetuer adipiscing elit. Aenean commodo ligula ege
-            </p>
-            <img src="https://demo.w3layouts.com/demos_new/template_demo/18-05-2019/gadget_signup_form-demo_Free/1576182126/web/images/b11.png" alt="ini adalah gambar laptop" srcset="" class="ui centered image">
+<h1 class="ui header center aligned">TukuTiket Login Administrator</h1>
+<div class="ui grid container">
+    <div class="ten wide column">
+        <h3 class="ui header center aligned">Flight Ticket Booking Management</h3>
+        <p>
+            Anda sebagai administrator dapat memanajemen pesawat, jadwal penerbangan, pemesanan tiket, dan pengecekan
+            pembayaran
+        </p>
+        <img src="https://img.icons8.com/cotton/2x/paper-plane--v2.png"
+             alt="ini adalah gambar laptop" srcset="" class="ui centered image"
+             style="margin-top: 3rem ;">
+    </div>
 
+    <div class="six wide column">
+        <div class="ui grid card-2">
+            <div class="sixteen wide column">
+<!--                <h2 class="ui header"></h2>-->
+                <form class="ui form" method="POST" action="login_check.php">
+                    <div class="field">
+                        <label>Username*</label>
+                        <input type="text" name="username" placeholder="Username" autofocus>
+                    </div>
+                    <div class="field">
+                        <label>Password</label>
+                        <input type="password" name="password" placeholder="password">
+                    </div>
+                    <div class="field">
 
-        </div>
-        <div class="six wide column">
-            <div class="ui grid card-2">
-                <div class="sixteen wide column">
-                    <h2 class="ui header"></h2>
-                    <form class="ui form" method="POST" id="form-login" action="login_check.php">
-                        <div class="field">
-                            <label>Username*</label>
-                            <input type="text" name="username" placeholder="Username" autofocus>
-                        </div>
+                        <!--  Check error when login  -->
+                        <?php
+                        include_once "../config/functions.php";
+                        $login = new LoginCheck();
+                        $login->checkLogin("error");
+                        ?>
 
-                        <div class="field">
-                            <label>Password</label>
-                            <input type="password" name="password" placeholder="password">
-                        </div>
-                        <div class="ui error message"></div>
-                        <button class="ui fluid primary button" type="submit">Log In</button>
-                        <p style="margin-bottom: 1rem !important;">Don't have an account,<br> <a href="index-signup.php">Sign Up</a></p>
-                    </form>
-                </div>
+                    </div>
+                    <button class="ui fluid primary button" type="submit">Log In</button>
+                    <p style="margin-bottom: 1rem !important; display: none;">
+                        Don't have an account,<br>
+                        <a href="index-signup.php">SignUp</a>
+                    </p>
+
+                </form>
             </div>
         </div>
     </div>
+</div>
 </body>
 <!-- javascript addition -->
-<script type="text/javascript" src="../assets/js/app.js"></script>
+<script type="text/javascript" src="../assets/app.js"></script>
 <!-- <script type="text/javascript" src="../assets/js/validation.js"></script> -->
 
 </html>

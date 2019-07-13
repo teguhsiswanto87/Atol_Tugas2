@@ -113,13 +113,15 @@ switch ($act) {
                         <div class="field eight wide column" id="passwordId">
                             <label>Password</label>
                             <input type="password" name="password" placeholder="password" id="password"
-                                   onkeyup="return checkPass()" required>
+                                   onkeyup="return checkPass()"
+                                   >
                             <span id="message"></span>
                         </div>
                         <div class="field eight wide column" id="confirmPasswordId">
                             <label>Konfirmasi Password</label>
                             <input type="password" name="confirmPassword" placeholder="password" id="confirmPassword"
-                                   onkeyup="checkPass()" required>
+                                   onkeyup="checkPass()"
+                                   >
                         </div>
                     </div>
                     <div class="ui error message"></div>

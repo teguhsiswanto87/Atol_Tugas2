@@ -12,7 +12,7 @@ switch ($act) {
                 <h2 class=''>Tampil Users</h2>
             </div>  
             <div class='four wide column'>
-                <a onclick=window.location.href='?m=$m&act=tambah' class='ui basic button right floated'>
+                <a onclick=window.location.href='?m=$m&act=tambah'; class='ui basic button right floated'>
                 <i class='icon plus'></i>
                     Tambah Users
                 </a>
@@ -23,10 +23,10 @@ switch ($act) {
                 <tr>
                 <th class='one wide'>No</th>
                 <th class='one wide'>Username</th>
-                <th class='four wide'>Fill Name</th>
+                <th class='four wide'>Nama lengkap</th>
                 <th class='three wide'>Email</th>
-                <th class='one wide'>Phone</th>
-                <th class='one wide'>Position</th>
+                <th class='one wide'>Telepon</th>
+                <th class='one wide'>Pangkat</th>
                 <th class='two wide'>Aksi</th>
                 </tr>
                 </thead>
@@ -76,13 +76,13 @@ switch ($act) {
         <div class="ui stackable grid container">
             <div class="eight wide column">
                 <h2 class="ui header"></h2>
-                <form class="ui form" method="POST" name="formUsers" onsubmit="return usersValidation()"
+                <form class="ui form" method="POST" name="formUsers" onsubmit="return usersValidation('tambah')"
                       action=<?php echo "$aksi?m=$m&act=tambah" ?>
                 >
                     <div class="ui grid">
                         <div class="field column wide eight" id="usernameField">
                             <label>Username*</label>
-                            <input type="text" name="username" placeholder="Username" minlength="4" maxlength="50">
+                            <input type="text" name="username" placeholder="Username" minlength="4" maxlength="50" id="username">
                         </div>
                         <div class="field column wide eight">
                             <label>Email</label>
@@ -99,7 +99,7 @@ switch ($act) {
                             <input type="number" name="phone" placeholder="Nomor Telepon">
                         </div>
                         <div class="field column wide eight">
-                            <label>Posisi</label>
+                            <label>Posisi*</label>
                             <div class="ui fluid selection dropdown">
                                 <input type="hidden" name="position" required>
                                 <div class="default text">Posisi</div>
@@ -113,15 +113,14 @@ switch ($act) {
                         <div class="field eight wide column" id="passwordId">
                             <label>Password</label>
                             <input type="password" name="password" placeholder="password" id="password"
-                                   onkeyup="return checkPass()"
-                                   >
+                                   onkeyup="return checkPass()">
                             <span id="message"></span>
                         </div>
                         <div class="field eight wide column" id="confirmPasswordId">
                             <label>Konfirmasi Password</label>
                             <input type="password" name="confirmPassword" placeholder="password" id="confirmPassword"
                                    onkeyup="checkPass()"
-                                   >
+                            >
                         </div>
                     </div>
                     <div class="ui error message"></div>
@@ -135,6 +134,7 @@ switch ($act) {
 
     case "edit":
         $data = $users->getItemUsers($_GET['id']);
+//        action=<?php echo '$aksi?m=$m&act=update&id=$_SESSION[username]'>
         echo "
     <div class='ui stackable grid container'>
         <div class='four wide column'>
@@ -146,36 +146,35 @@ switch ($act) {
         <div class='eight wide column'>
             <h2>Edit Users</h2>
         </div>
-        <div class='eight wide column'>
-            <h2 class='ui header'></h2>
-            <form class='ui form' method='POST' action='$aksi?m=$m&act=update' id=form-modul>
-                <input type='hidden' name='id' value='$data[module_id]'>
-                <div class='field'>
-                    <label>Nama Modul</label>
-                    <input type='text' name='module_name' placeholder='$data[module_name]' value='$data[module_name]'>
-                </div>
-                <div class='field'>
-                    <label>Link</label>
-                    <input type='text' name='link' placeholder='$data[link]' value='$data[link]'>
-                </div>
-                <div class='field'>
-                    <label>Ikon</label>
-                    <input type='text' name='icon' placeholder='$data[icon]' value='$data[icon]'>
-                    <small>Referensi Icon: <a href='https://semantic-ui.com/elements/icon.html' target='_blank'>Open New Tab</a></small>
-                </div>
-                <div class='field'>
-                    <label>Aktif</label>
-                    <div class='ui checked checkbox'>";
-        ($data['active'] == 'Y') ? $checked = 'checked' : $checked = '';
-        echo "
-                        <input type='checkbox' name='active' value='Y' $checked>
-                        <label>Tampilkan di Menu Admin</label>
+        <div class='ui stackable grid container'>
+            <div class='eight wide column'>
+                <h2 class='ui header'></h2>
+                <form class='ui form' method='POST' name='formUsers' onsubmit='return usersValidation('update')'>
+                    <div class='ui grid'>
+                        <div class='field column wide eight' id='usernameField'>
+                            <label>Username*</label>
+                            <input type='text' name='username' placeholder='$data[username]' value='$data[username]' minlength='4' maxlength='50'>
+                        </div>
+                        <div class='field column wide eight'>
+                            <label>Email</label>
+                            <input type='email' name='email' placeholder='$data[email]' value='$data[email]' maxlength='50'>
+                        </div>
                     </div>
-                </div>
-                <div class='ui error message'></div>
-                <button class='ui basic primary button right floated' type='submit'>Perbarui</button>
-            </form>
-        </div>
-    </div>";
+                    <div class='field'>
+                        <label>Nama Lengkap</label>
+                        <input type='text' name='full_name' placeholder='$data[full_name]' value='$data[full_name]'>
+                    </div>
+                    <div class='ui grid'>
+                        <div class='field column wide eight'>
+                            <label>Phone</label>
+                            <input type='number' name='phone' placeholder='$data[phone]' value='$data[phone]'>
+                        </div>
+                    </div>
+                    <div class='ui error message'></div>
+                    <button class='ui basic primary button right floated' type='submit' name='btnUsersAdd'>Perbarui
+                    </button>
+                </form>
+            </div>
+        </div>";
         break;
 } ?>

@@ -1,7 +1,7 @@
 <?php
 //session_start();
 if (empty($_SESSION['username']) && empty($_SESSION['password'])) {
-    echo "Anda Harus Login terlebih dahulu, <a href='index.php'>Login</a> ";
+    header("location:index.php?error=8");
 } else {
 //    include "../config/functions.php";
 

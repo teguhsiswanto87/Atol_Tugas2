@@ -116,7 +116,7 @@ switch ($act) {
         </div>
         <div class='eight wide column'>
             <h2 class='ui header'></h2>
-            <form class='ui form' method='POST' action='$aksi?m=$m&act=update' id=form-modul>
+            <form class='ui form' method='POST' name='formModule' action='$aksi?m=$m&act=update' onsubmit='return moduleValidation()'>
                 <input type='hidden' name='id' value='$data[module_id]'>
                 <div class='field'>
                     <label>Nama Modul</label>

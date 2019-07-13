@@ -1,5 +1,6 @@
 <?php
 if (empty($_SESSION['username']) && empty($_SESSION['password'])) {
+    header("location:index.php?error=8");
 } else {
 
     ?>

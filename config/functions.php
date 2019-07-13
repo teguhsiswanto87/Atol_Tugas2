@@ -258,6 +258,9 @@ class LoginCheck
                 case 7 :
                     $this->showError("Username minimal 5 karakter");
                     break;
+                case 8 :
+                    $this->showError("Maaf, Anda harus login dulu");
+                    break;
             }
         }
     }

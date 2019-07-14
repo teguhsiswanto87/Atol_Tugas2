@@ -193,3 +193,21 @@ function flightClassValidation() {
         return false;
     }
 }
+
+//validasi booking status
+function bookingStatusValidation() {
+    var status = document.formBookingStatus.status.value.trim();
+
+    if (status.length == 0) {
+        alert("Status tidak boleh kosong");
+        document.formBookingStatus.status.focus();
+        return false;
+    }
+    //pastikan status hanya mengandung huruf dan angka
+    var regex = /^[A-Za-z0-9\s]+$/;
+    if (!regex.test(status)) {
+        alert("Status harus berupa huruf dan angka");
+        document.formBookingStatus.status.focus();
+        return false;
+    }
+}

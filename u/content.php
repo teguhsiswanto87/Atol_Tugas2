@@ -52,6 +52,10 @@ if (empty($_SESSION['username']) && empty($_SESSION['password'])) {
         if ($_SESSION['position'] == 'admin') {
             include "module/mod_penerbangankelas/penerbangankelas.php";
         }
+    } elseif ($_GET['m'] == 'bookingstatus') {
+        if ($_SESSION['position'] == 'admin') {
+            include "module/mod_bookingstatus/bookingstatus.php";
+        }
     } else {
         echo "Modul <b>$_GET[m]</b> sedang dibuat";
     }

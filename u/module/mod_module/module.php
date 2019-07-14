@@ -75,7 +75,7 @@ switch ($act) {
                       action=<?php echo "$aksi?m=$m&act=tambah" ?>>
                     <div class="field">
                         <label>Nama Modul</label>
-                        <input type="text" name="module_name" placeholder="Nama Modul">
+                        <input type="text" name="module_name" placeholder="Nama Modul" autofocus>
                     </div>
                     <div class="field">
                         <label>Link (contoh =>  ?m=namamodule)</label>

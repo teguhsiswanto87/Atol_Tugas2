@@ -83,7 +83,7 @@ switch ($act) {
                         <div class="field column wide eight" id="usernameField">
                             <label>Username*</label>
                             <input type="text" name="username" placeholder="Username" minlength="4" maxlength="50"
-                                   id="username">
+                                   id="username" autofocus>
                         </div>
                         <div class="field column wide eight">
                             <label>Email</label>

@@ -175,3 +175,21 @@ function airplaneValidation() {
         return false;
     }
 }
+
+//validasi Kelas Penerbangan Pesawat
+function flightClassValidation() {
+    var flightClass = document.formFlightClass.class.value.trim();
+
+    if (flightClass.length == 0) {
+        alert("Penerbangan Kelas tidak boleh kosong");
+        document.formFlightClass.class.focus();
+        return false;
+    }
+    //pastikan flightClass hanya mengandung huruf dan angka
+    var regex = /^[A-Za-z0-9\s]+$/;
+    if (!regex.test(flightClass)) {
+        alert("Penerbangan Kelas harus berupa huruf dan angka");
+        document.formFlightClass.class.focus();
+        return false;
+    }
+}

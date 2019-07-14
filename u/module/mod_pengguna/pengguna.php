@@ -82,7 +82,8 @@ switch ($act) {
                     <div class="ui grid">
                         <div class="field column wide eight" id="usernameField">
                             <label>Username*</label>
-                            <input type="text" name="username" placeholder="Username" minlength="4" maxlength="50" id="username">
+                            <input type="text" name="username" placeholder="Username" minlength="4" maxlength="50"
+                                   id="username">
                         </div>
                         <div class="field column wide eight">
                             <label>Email</label>
@@ -134,8 +135,8 @@ switch ($act) {
 
     case "edit":
         $data = $users->getItemUsers($_GET['id']);
-//        action=<?php echo '$aksi?m=$m&act=update&id=$_SESSION[username]'>
-        echo "
+        $session = session_id();
+        echo " 
     <div class='ui stackable grid container'>
         <div class='four wide column'>
             <a onclick='self.history.back()' class='ui labeled icon button'>
@@ -146,13 +147,16 @@ switch ($act) {
         <div class='eight wide column'>
             <h2>Edit Users</h2>
         </div>
+     </div>
         <div class='ui stackable grid container'>
             <div class='eight wide column'>
                 <h2 class='ui header'></h2>
-                <form class='ui form' method='POST' name='formUsers' onsubmit='return usersValidation('update')'>
+                <form class='ui form' method='POST' name='formUsers' onsubmit=\"return usersValidation('update')\"
+                    action='$aksi?m=$m&act=update&id=$_SESSION[username]' >
                     <div class='ui grid'>
-                        <div class='field column wide eight' id='usernameField'>
+                        <div class='field column wide eight disabled' id='usernameField'>
                             <label>Username*</label>
+                            <input type='hidden' name='session' value='$session'>
                             <input type='text' name='username' placeholder='$data[username]' value='$data[username]' minlength='4' maxlength='50'>
                         </div>
                         <div class='field column wide eight'>

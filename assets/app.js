@@ -45,8 +45,8 @@ function usersValidation(jenis) {
     var full_name = document.formUsers.full_name.value.trim();
     var position = document.formUsers.position.value.trim();
     var phone = document.formUsers.phone.value.trim();
-    var password = document.formUsers.password.value.trim();
-    var confirmPassword = document.formUsers.confirmPassword.value.trim();
+    var password = document.formUsers.password.value;
+    var confirmPassword = document.formUsers.confirmPassword.value;
 
     if (jenis === 'update' || jenis === 'tambah') {
 
@@ -107,13 +107,13 @@ function usersValidation(jenis) {
             document.formUsers.confirmPassword.focus();
             return false;
         }
-        if (password !== confirmPassword && password.length !== confirmPassword.length) {
+        if (password !== confirmPassword || password.length !== confirmPassword.length) {
             alert("Password dan konfirmasinya tidak valid");
             document.formUsers.password.focus();
             return false;
         }
         //jika password mengandung spasi
-        if (/\s/.test(password)) {
+        if (/\s/.test(password) || /\s/.test(confirmPassword)) {
             alert("Password tidak boleh mengandung spasi");
             document.formUsers.password.focus();
             return false;

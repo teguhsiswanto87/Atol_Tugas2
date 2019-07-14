@@ -22,13 +22,14 @@ if ($m === 'pengguna' && $act == 'tambah') {
         echo "Gagal Memasukkan data $m ";
     }
 } elseif ($m == 'pengguna' && $act == 'update') {
-    $module_id = $conn->real_escape_string(my_inputformat(anti_injection($_POST['id']), 0));
+    $session = $conn->real_escape_string(my_inputformat(anti_injection($_POST['session']), 0));
+    $username = $conn->real_escape_string(my_inputformat(anti_injection($_POST['username']), 0));
     $full_name = $conn->real_escape_string(my_inputformat(anti_injection($_POST['full_name']), 1));
-    $email = $conn->real_escape_string(my_inputformat(anti_injection($_POST['link']), 0));
-    $phone = $conn->real_escape_string(my_inputformat(anti_injection($_POST['icon']), 1));
-    $block = $conn->real_escape_string(my_inputformat(anti_injection(isset($_POST['active']) ? $_POST['active'] : 'N'), 0));
+    $email = $conn->real_escape_string(my_inputformat(anti_injection($_POST['email']), 0));
+    $phone = $conn->real_escape_string(my_inputformat(anti_injection($_POST['phone']), 0));
+//    $block = $conn->real_escape_string(my_inputformat(anti_injection(isset($_POST['active']) ? $_POST['active'] : 'N'), 0));
 
-    $update = $users->updateUsers($module_id, $full_name, $email, $phone, $block);
+    $update = $users->updateUsers($full_name,$email,$phone,$username,$session);
     if ($update) {
         header("location: ../../media.php?m=" . $m);
     } else {

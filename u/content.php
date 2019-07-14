@@ -36,9 +36,9 @@ if (empty($_SESSION['username']) && empty($_SESSION['password'])) {
 
 
 //    PAKAI CARA 1
-    if ($_GET['m'] == 'pegawai') {
+    if ($_GET['m'] == 'pesawat') {
         if ($_SESSION['position'] == 'admin') {
-            include "module/mod_pegawai/pegawai.php";
+            include "module/mod_pesawat/pesawat.php";
         }
     } elseif ($_GET['m'] == 'module') {
         if ($_SESSION['position'] == 'admin') {

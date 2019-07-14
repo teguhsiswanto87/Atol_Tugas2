@@ -142,4 +142,36 @@ function checkPass() {
         message.innerHTML = 'Konfirmasi password tidak valid';
     }
     return false;
-};
+}
+
+
+//validasi Pesawat
+function airplaneValidation() {
+    var producer = document.formAirplane.producer.value.trim();
+    var type = document.formAirplane.type.value.trim();
+
+    if (producer.length == 0) {
+        alert("Producer tidak boleh kosong");
+        document.formAirplane.producer.focus();
+        return false;
+    }
+    //pastikan producer hanya mengandung huruf dan angka
+    var regex = /^[A-Za-z0-9\s]+$/;
+    if (!regex.test(producer)) {
+        alert("Producer harus berupa huruf dan angka");
+        document.formAirplane.producer.focus();
+        return false;
+    }
+    //jika type kosong
+    if (type.length == 0) {
+        alert("Type tidak boleh kosong");
+        document.formAirplane.type.focus();
+        return false;
+    }
+    //pastikan type hanya mengandung huruf dan angka
+    if (!regex.test(type)) {
+        alert("Type harus berupa huruf dan angka");
+        document.formAirplane.type.focus();
+        return false;
+    }
+}

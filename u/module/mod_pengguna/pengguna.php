@@ -18,7 +18,7 @@ switch ($act) {
                 </a>
             </div>
             <div class='fifteen wide column'>
-                <table class='ui striped table'>
+                <table class='ui selectable very basic table'>
                 <thead>
                 <tr>
                 <th class='one wide'>No</th>

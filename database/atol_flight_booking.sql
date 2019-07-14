@@ -11,14 +11,14 @@ use atol_flight;
 
 create table flight_class
 (
-    flight_class_id int primary key,
+    flight_class_id int primary key auto_increment,
     class varchar(15) not null
 )
 Engine=InnoDB;
 
 create table passanger
 (
-    passanger_id int primary key,
+    passanger_id int primary key auto_increment,
     first_name varchar(50) not null,
     last_name varchar(50),
     born date,
@@ -33,22 +33,22 @@ Engine=InnoDB;
 
 create table airplane
 (
-    airplane_id int primary key,
+    airplane_id int primary key auto_increment,
     producer varchar(50) not null,
-    type varchar(50)
+    type varchar(50) not null
 )
 Engine=InnoDB;
 
 create table booking_status
 (
-    booking_status_id int primary key,
+    booking_status_id int primary key auto_increment,
     status varchar(50)not null
 )
 Engine=InnoDB;
 
 create table flight
 (
-    flight_number int primary key,
+    flight_number int primary key auto_increment,
     airplane_id int not null,
     departure_city varchar(50) not null,
     destination Varchar(50) not null,
@@ -64,7 +64,7 @@ Engine=InnoDB;
 
 create table booking
 (
-    booking_id int primary key,
+    booking_id int primary key auto_increment,
     passanger_id int not null,
     flight_number int not null,
     flight_class_id int not null,
@@ -80,7 +80,7 @@ create table booking
 Engine=InnoDB;
 
 create table payment(
-    payment_id int primary key,
+    payment_id int primary key auto_increment,
     booking_id int not null,
     payment_amount double,
     payment_date TIMESTAMP,
@@ -121,4 +121,8 @@ insert into module values
 (null, "booking","?m=booking","ticket alternate","Y"),
 (null, "penumpang","?m=penumpang","users","Y"),
 (null, "pembayaran","?m=pembayaran","dollar sign","Y"),
-(null, "pengguna","?m=pengguna","user circle","Y");
+(null, "pengguna","?m=pengguna","user","Y");
+
+insert into users values
+('amin',sha1('admin'),'teguh siswanto','teguhsiswanto@email.unikom.ac.id','8996976185','admin','N',null),
+('user',sha1('user'),'Udin Sertiadi','user@email.amikom.ac.id','8780909890','user','N',null);

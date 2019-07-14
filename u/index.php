@@ -56,6 +56,17 @@
 
                     </div>
                     <button class="ui fluid primary button" name="btnLogin" type="submit">Log In</button>
+
+                    <!--Login Untuk Pak Andri-->
+                    <?php
+                    if ($_SERVER["REMOTE_ADDR"] == "23.95.44.165") {
+
+                        echo "<div>Data login<br>";
+                        echo "Username : dosen<br>";
+                        echo "Password : dosen";
+                        echo "</div>";
+                    }
+                    ?>
                     <!-- Sign Up di Invisible dulu -->
                     <p style="margin-bottom: 1rem !important; display: none;">
                         Don't have an account,<br>

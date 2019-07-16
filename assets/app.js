@@ -211,3 +211,99 @@ function bookingStatusValidation() {
         return false;
     }
 }
+
+//validasi Penumpang
+function passangerValidation(jenis) {
+    var first_name = document.formPassanger.first_name.value.trim();
+    var last_name = document.formPassanger.last_name.value.trim();
+    var born = document.formPassanger.born.value.trim();
+    var address = document.formPassanger.address.value.trim();
+    var city = document.formPassanger.city.value.trim();
+    var zip = document.formPassanger.zip.value.trim();
+    var state = document.formPassanger.state.value.trim();
+    var phone = document.formPassanger.phone.value.trim();
+    var email = document.formPassanger.email.value.trim();
+    var password = document.formPassanger.password.value;
+    var confirmPassword = document.formPassanger.confirmPassword.value;
+
+    if (jenis === 'update' || jenis === 'tambah') {
+
+        if (first_name.length == 0) {
+            alert("Nama depan tidak boleh kosong");
+            document.formPassanger.first_name.focus();
+            return false;
+        }
+        //pastikan first_name hanya mengandung huruf dan angka
+        var regex = /^[A-Za-z\s]+$/;
+        if (!regex.test(first_name)) {
+            alert("Nama depan harus berupa huruf");
+            document.formPassanger.first_name.focus();
+            return false;
+        }
+        // validasi nama belakang
+        // if (last_name.length == 0) {
+        //     alert("Nama belakang tidak boleh kosong");
+        //     document.formPassanger.last_name.focus();
+        //     return false;
+        // }
+
+        //pastikan last_name hanya mengandung huruf dan angka
+        // var regex = /^[A-Za-z\s]+$/;
+        // if (!regex.test(last_name)) {
+        //     alert("Nama belakang harus berupa huruf");
+        //     document.formPassanger.last_name.focus();
+        //     return false;
+        // }
+
+        //jika userame mengandung spasi
+        // if (/\s/.test(username)) {
+        //     alert("Username tidak boleh mengandung spasi");
+        //     document.formPassanger.username.focus();
+        //     // usernameError.style.display = "block";
+        //     return false;
+        // }
+        //email pattern
+        if (!/\S+@\S+\.\S+/.test(email)) {
+            alert("Email tidak valid");
+            document.formPassanger.email.focus();
+            return false;
+        }
+        //jika phone bernilai negatif
+        if (parseInt(phone) < 0) {
+            alert("Nomor telepon tidak valid");
+            document.formPassanger.phone.focus();
+            return false;
+        }
+        //jika zip bernilai negatif atau digit kurang dari 4
+        if (parseInt(zip) < 0) {
+            alert("Kode POS tidak valid");
+            document.formPassanger.zip.focus();
+            return false;
+        }
+
+    }
+
+    if (jenis == 'tambah') {
+        //jika password & confirmPassword kurang dari 4 karakter
+        if (password.length < 4) {
+            alert("password minimal 4 karakter");
+            document.formPassanger.password.focus();
+            return false;
+        } else if (confirmPassword.length < 4) {
+            alert("Konfirmasi password minimal 4 karakter");
+            document.formPassanger.confirmPassword.focus();
+            return false;
+        }
+        if (password !== confirmPassword || password.length !== confirmPassword.length) {
+            alert("Password dan konfirmasinya tidak valid");
+            document.formPassanger.password.focus();
+            return false;
+        }
+        //jika password mengandung spasi
+        if (/\s/.test(password) || /\s/.test(confirmPassword)) {
+            alert("Password tidak boleh mengandung spasi");
+            document.formPassanger.password.focus();
+            return false;
+        }
+    }
+}

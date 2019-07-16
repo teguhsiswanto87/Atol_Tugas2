@@ -2,6 +2,8 @@
 // connect to database
 function dbConnect()
 {
+//    connect DB untuk di rumah hosting
+//    $db = new mysqli("103.8.79.214", "siswanto_root", "siswanto123321", "siswanto_atol_flight");
     $db = new mysqli("localhost", "root", "siswanto123321", "atol_flight");
     return $db;
 }
@@ -120,6 +122,99 @@ class Module
         $conn = dbConnect();
         if ($conn->connect_errno == 0) {
             $sql = "DELETE FROM module WHERE module_id='$module_id'";
+            $res = $conn->query($sql);
+            if ($res) return true; else return false;
+        } else {
+            return false;
+        }
+    }
+
+}
+
+class Passanger
+{
+
+    // get data from Passanger
+    function getListPassanger()
+    {
+        $conn = dbConnect();
+        if ($conn->connect_errno == 0) {
+            $sql = "SELECT * FROM passanger";
+            $res = $conn->query($sql);
+            if ($res) {
+                $data = $res->fetch_all(MYSQLI_ASSOC);
+                $res->free();
+                return $data;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+
+    // get 1 data to put in edit form
+    function getItemPassanger($passanger)
+    {
+        $conn = dbConnect();
+        if ($conn->connect_errno == 0) {
+            $sql = "SELECT * FROM passanger WHERE passanger_id='$passanger'";
+            $res = $conn->query($sql);
+            $data = $res->fetch_assoc();
+            $row_cnt = $res->num_rows;
+
+            if ($row_cnt == 1) {
+                return $data;
+            }
+
+        } else {
+            return false;
+        }
+    }
+
+    // masukkan data Passanger
+    function insertPassanger($first_name, $last_name, $born, $address, $city, $zip, $state, $phone, $email, $password)
+    {
+        $conn = dbConnect();
+        if ($conn->connect_errno == 0) {
+            $sql = "INSERT INTO passanger(first_name, last_name, born, address, city, zip, state, phone, email, password)
+                      VALUES('$first_name','$last_name','$born','$address','$city','$zip','$state','$phone','$email','$password')";
+            $res = $conn->query($sql);
+            if ($res) return true; else return false;
+        }
+
+    }
+
+    // update data passanger
+    function updatePassanger($passanger_id, $first_name, $last_name, $born, $address, $city, $zip, $state, $phone, $email)
+    {
+        $conn = dbConnect();
+        if ($conn->connect_errno == 0) {
+            $sql = "UPDATE passanger SET first_name='$first_name',
+                                        last_name='$last_name',
+                                        born='$born', 
+                                        address='$address', 
+                                        city='$city', 
+                                        zip='$zip', 
+                                        state='$state', 
+                                        phone='$phone', 
+                                        email='$email'
+                                    WHERE passanger_id='$passanger_id' ";
+            $res = $conn->query($sql);
+
+            if ($res) return true; else return false;
+
+        } else {
+            return false;
+        }
+    }
+
+    //delete 1 data passanger
+    function deletePassanger($passanger_id)
+    {
+        $conn = dbConnect();
+        if ($conn->connect_errno == 0) {
+            $sql = "DELETE FROM passanger WHERE passanger_id='$passanger_id'";
             $res = $conn->query($sql);
             if ($res) return true; else return false;
         } else {
@@ -333,7 +428,7 @@ class Airplane
         }
     }
 
-    // masukkan data Users
+    // masukkan data Airplane
     function insertAirplane($producer, $type)
     {
         $conn = dbConnect();

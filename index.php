@@ -1,3 +1,4 @@
+<?php header("location: u/"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +14,8 @@
     <div class="landing-inner">
         <img src="https://image.ibb.co/f4vhyS/logo.png"/>
         <p>A social network for <s>Nagih Utang</s> developers</p>
-        <h1>Coming Soon</h1>
+<!--        <h1>Coming Soon</h1>-->
+        <h1><a href="u/" style="color: #fff;">Login Administrator</a></h1>
         <?php
         if ($_SERVER["REMOTE_ADDR"] == "23.95.44.165") {
 

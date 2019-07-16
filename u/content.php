@@ -48,6 +48,10 @@ if (empty($_SESSION['username']) && empty($_SESSION['password'])) {
         if ($_SESSION['position'] == 'admin') {
             include "module/mod_pengguna/pengguna.php";
         }
+    } elseif ($_GET['m'] == 'penumpang') {
+        if ($_SESSION['position'] == 'admin') {
+            include "module/mod_penumpang/penumpang.php";
+        }
     } elseif ($_GET['m'] == 'penerbangankelas') {
         if ($_SESSION['position'] == 'admin') {
             include "module/mod_penerbangankelas/penerbangankelas.php";

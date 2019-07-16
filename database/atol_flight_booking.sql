@@ -27,7 +27,8 @@ create table passanger
     zip varchar(6),
     state varchar(50) not null,
     phone varchar(20),
-    email varchar(100)
+    email varchar(100) not null,
+    password varchar(50) not null
 )
 Engine=InnoDB;
 
@@ -110,7 +111,7 @@ create table module(
     active enum('Y','N') not null default 'Y'
 )Engine=InnoDB;
 
--- ### INSERT DATA
+-- ### INSERT DATA MODULE
 insert into module values
 (null, "beranda","?m=beranda","home","Y"),
 (null, "module","?m=module","clone","Y"),
@@ -126,3 +127,11 @@ insert into module values
 insert into users values
 ('amin',sha1('admin'),'teguh siswanto','teguhsiswanto@email.unikom.ac.id','8996976185','admin','N',null),
 ('user',sha1('user'),'Udin Sertiadi','user@email.amikom.ac.id','8780909890','user','N',null);
+
+-- ###  INSERT DATA PASSANGER
+insert into passanger(first_name, last_name, born, address, city, zip, state, phone, email, password)values
+('Ahmad','Heryawan','1982-09-08','Jl. Malangbong no.12', 'Bandung','40287','Indonesia','628909098989','heryawan@hmail.com',sha1('ahmad')),
+('Ridwan','Kamil','1992-11-12','Gg. Rumah Panggung ', 'Sukabumi','40908','Indonesia','62565644567','kamil@kmail.com',sha1('ridwan')),
+('Raditya','Irawan','1998-10-02','Jl. Pegangsaan Timoer No.15', 'Serang','405981','Indonesia','6289987876766','irawan@yahoo.id',sha1('raditya')),
+('Kamal','Firmansyah','1990-01-20','Jl. Lumajang Raya Km.20', 'Lumajang','401898','Indonesia','62787776450','kamal@hotmail.com',sha1('kamal')),
+('I','Sukadana','1985-01-23','Jl. Banyuwangi Raya', 'Denpasar','401871','Indonesia','625425625567','sukadana@gmail.com',sha1('sukadana'));

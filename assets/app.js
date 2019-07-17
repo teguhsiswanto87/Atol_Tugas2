@@ -240,12 +240,20 @@ function passangerValidation(jenis) {
             document.formPassanger.first_name.focus();
             return false;
         }
-        // validasi nama belakang
-        // if (last_name.length == 0) {
-        //     alert("Nama belakang tidak boleh kosong");
-        //     document.formPassanger.last_name.focus();
-        //     return false;
-        // }
+
+        // born tidak boleh kosong
+        if (born.length == 0) {
+            alert("Tanggal Lahir tidak boleh kosong");
+            document.formPassanger.born.focus();
+            return false;
+        }
+
+        // negara tidak boleh kosong
+        if (state.length == 0) {
+            alert("Negara tidak boleh kosong");
+            document.formPassanger.state.focus();
+            return false;
+        }
 
         //pastikan last_name hanya mengandung huruf dan angka
         // var regex = /^[A-Za-z\s]+$/;

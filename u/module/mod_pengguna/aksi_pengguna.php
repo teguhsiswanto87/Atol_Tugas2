@@ -12,10 +12,10 @@ if ($m === 'pengguna' && $act == 'tambah') {
     $password = $conn->real_escape_string(my_inputformat(anti_injection($_POST['password']), 0));
     $full_name = $conn->real_escape_string(my_inputformat(anti_injection($_POST['full_name']), 1));
     $email = $conn->real_escape_string(my_inputformat(anti_injection($_POST['email']), 0));
-    $phone = $conn->real_escape_string(my_inputformat(anti_injection($_POST['phone']), 0 ));
-    $position = $conn->real_escape_string(my_inputformat(anti_injection($_POST['position']), 0 ));
+    $phone = $conn->real_escape_string(my_inputformat(anti_injection($_POST['phone']), 0));
+    $position = $conn->real_escape_string(my_inputformat(anti_injection($_POST['position']), 0));
 
-    $insert = $users->insertUsers($username,sha1($password),$full_name,$email,$phone,$position,'N');
+    $insert = $users->insertUsers($username, sha1($password), $full_name, $email, $phone, $position, 'N');
     if ($insert) {
         header("location: ../../media.php?m=" . $m);
     } else {
@@ -29,7 +29,7 @@ if ($m === 'pengguna' && $act == 'tambah') {
     $phone = $conn->real_escape_string(my_inputformat(anti_injection($_POST['phone']), 0));
 //    $block = $conn->real_escape_string(my_inputformat(anti_injection(isset($_POST['active']) ? $_POST['active'] : 'N'), 0));
 
-    $update = $users->updateUsers($full_name,$email,$phone,$username,$session);
+    $update = $users->updateUsers($full_name, $email, $phone, $username, $session);
     if ($update) {
         header("location: ../../media.php?m=" . $m);
     } else {

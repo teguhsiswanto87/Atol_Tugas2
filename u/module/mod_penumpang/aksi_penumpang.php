@@ -6,7 +6,7 @@ $m = $_GET['m'];
 $act = $_GET['act'];
 $passanger = new Passanger();
 $conn = dbConnect();
-// input Pengguna
+// input penumpang
 if ($m === 'penumpang' && $act == 'tambah') {
     $first_name = $conn->real_escape_string(my_inputformat(anti_injection($_POST['first_name']), 1));
     $last_name = $conn->real_escape_string(my_inputformat(anti_injection($_POST['last_name']), 1));
@@ -19,24 +19,15 @@ if ($m === 'penumpang' && $act == 'tambah') {
     $email = $conn->real_escape_string(my_inputformat(anti_injection($_POST['email']), 0));
     $password = $conn->real_escape_string(my_inputformat(anti_injection($_POST['password']), 0));
 
-    $insert = $passanger->insertPassanger($first_name, $last_name, $born, $address, $city, $zip, $state, $phone, $email, sha1($password));
+//    $insert = $passanger->insertPassanger(20, $first_name, $last_name, $born, $address, $city, $zip, $state, $phone, $email, sha1($password));
+    $insert = $passanger->insertPassanger($first_name, $state, $email, sha1($password), $last_name, $address, $city, $zip, $phone, $born);
 
     if ($insert) {
         header("location: ../../media.php?m=" . $m);
     } else {
         echo "Gagal Memasukkan data $m ";
         echo "<br>
-            nama depan : $first_name <br>
-            nama belakang : $last_name <br>
-            born : $born<br>
-            Alamat : $address <br>
-            cty : $city <br>
-            zip : $zip <br>
-            state : $state<br>
-            phone : $phone<br>
-            email : $email<br>
-            passeord : $password<br>
-            insert : !$insert
+            born : $born
         ";
     }
 } elseif ($m == 'penumpang' && $act == 'update') {

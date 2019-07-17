@@ -173,12 +173,14 @@ class Passanger
     }
 
     // masukkan data Passanger
-    function insertPassanger($first_name, $last_name, $born, $address, $city, $zip, $state, $phone, $email, $password)
+//    function insertPassanger($passanger_id,$first_name, $last_name, $born, $address, $city, $zip, $state, $phone, $email, $password)
+    function insertPassanger($first_name, $state, $email, $password, $last_name, $address, $city,$zip,$phone,$born)
     {
         $conn = dbConnect();
         if ($conn->connect_errno == 0) {
-            $sql = "INSERT INTO passanger(first_name, last_name, born, address, city, zip, state, phone, email, password)
-                      VALUES('$first_name','$last_name','$born','$address','$city','$zip','$state','$phone','$email','$password')";
+//            $sql = "INSERT INTO passanger(passanger_id,first_name, last_name, born, address, city, zip, state, phone, email, password)
+//                      VALUES('$passanger_id','$first_name','$last_name','$born','$address','$city','$zip','$state','$phone','$email','$password')";
+            $sql = "insert into passanger(first_name,state,email,password,last_name,address,city,zip,phone,born) values ('$first_name','$state','$email','$password','$last_name','$address','$city','$zip','$phone','$born')";
             $res = $conn->query($sql);
             if ($res) return true; else return false;
         }

@@ -35,8 +35,8 @@ switch ($act) {
         foreach ($dataPassanger as $data) {
             echo "<tr>
                 <td>$no</td>
-                <td>$data[first_name] $data[last_name]</td>
-                <td>$data[city]</td>
+                <td style='text-transform: capitalize;'>$data[first_name] $data[last_name]</td>
+                <td style='text-transform: capitalize;'>$data[city]</td>
                 <td>$data[email]</td>
                 <td>$data[phone]</td>
                 <td>
@@ -96,7 +96,7 @@ switch ($act) {
                         </div>
                         <div class="field">
                             <label>Tanggal Lahir</label>
-                            <input type="date" name="born">
+                            <input type="date" name="born" value="">
                         </div>
                     </div>
                     <div class="ui grid">
@@ -157,7 +157,7 @@ switch ($act) {
         <div class='ui stackable grid container'>
             <div class='eight wide column'>
                 <h2 class='ui header'></h2>
-                <form class='ui form' method='POST' name='formPassanger' onsubmit=\"return passangerValidation('tambah')\"
+                <form class='ui form' method='POST' name='formPassanger' onsubmit=\"return passangerValidation('update')\"
                       action='$aksi?m=$m&act=update'>
                     <div class='ui grid'>
                         <div class='field column wide eight' id='usernameField'>
